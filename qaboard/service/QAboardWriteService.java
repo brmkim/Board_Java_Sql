@@ -7,7 +7,7 @@ import com.eagle.qaboard.dto.QAboardDTO;
 
 public class QAboardWriteService {
 	public void process(QAboardDTO dto) throws SQLException {
-		System.out.println("QAboardWriteService.process()");
+		//System.out.println("QAboardWriteService.process()");
 		
 		QAboardDAO dao = new QAboardDAO();
 		dao.write(dto);

@@ -7,9 +7,9 @@ import com.eagle.qaboard.dao.QAboardDAO;
 public class QAboardQuestionDeleteService {
 	
 	public void process(int n) throws SQLException {
-		System.out.println("QAboardQuestionDeleteService.process()");
+		//System.out.println("QAboardQuestionDeleteService.process()");
 		
 		QAboardDAO dao = new QAboardDAO();
-		dao.QuestionDelete(n);		
+		dao.questionDelete(n);		
 	}	
 }

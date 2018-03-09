@@ -20,7 +20,7 @@ import com.eagle.qaboard.view.QAboardPrint;
 public class QAboardController implements ControllerInterface{
 	
 	public void selectMenu() throws SQLException {
-		System.out.println("BoardController.selectMenu()");
+		//System.out.println("BoardController.selectMenu()");
 		// 메뉴출력 및 입력, 처리 무한반복
 		while (true) {
 			
@@ -51,6 +51,8 @@ public class QAboardController implements ControllerInterface{
 					QAboardPrint boardPrintView = new QAboardPrint();
 					boardPrintView.view(qaBoardDTO);	
 					
+					
+										
 				} catch (Exception e) {
 					System.out.println("숫자를 입력해야합니다.");
 					e.printStackTrace();
@@ -132,7 +134,7 @@ public class QAboardController implements ControllerInterface{
 							InUtil.getString("제목을 입력해주세요: "),
 							InUtil.getString("내용을 입력해주세요: "),
 							InUtil.getString("작성자명을 입력해주세요: "),
-							qaBoardDTO.getGrp(),
+							qaBoardDTO.getGrp(), // <--- qaBaordDTO 이 인스턴스는 질문글 인스턴스이다. 질문글의 GRP 밸류를 새 인스턴스의 GRP로 넣는다.
 							qaBoardDTO.getSeq() + 1,  // seq와 lvl은 1씩 증가
 							qaBoardDTO.getLvl() + 1			
 							);  
@@ -146,7 +148,7 @@ public class QAboardController implements ControllerInterface{
 				break;
 			case "6":
 				System.out.println("답변 글삭제"); //답변글은 그 글 하나만 삭제하도록 함.
-				System.out.println("몇번 질문글을 삭제하시겠습니까? ->");
+				System.out.println("몇번 글을 삭제하시겠습니까? ->");
 				try {
 					// 글을 불러와 프린트
 					int num = InUtil.getInt();

@@ -19,7 +19,7 @@ public class QAboardDAO {
 	 * list() method
 	 */
 	public List<QAboardDTO> list() throws SQLException{
-		System.out.println("QAboardDAO.list()호출됨");
+		//System.out.println("QAboardDAO.list()호출됨");
 		List<QAboardDTO> list = null;
 		
 		//RDBMS에서 데이터를 가져오는 프로그램 작성		
@@ -39,7 +39,7 @@ public class QAboardDAO {
 			 * 6. 닫기
 			 */
 			// 1. 
-			System.out.println("QAboard 드라이버 및 연결 확인");
+			//System.out.println("QAboard 드라이버 및 연결 확인");
 			// 2. 게시판을 계층형으로 보는 sql문
 			String sql = "select no, title, writer, writedate, grp, seq, lvl from qaboard order by grp, seq asc"; 
 
@@ -94,7 +94,7 @@ public class QAboardDAO {
 	 * view() method
 	 */
 	public QAboardDTO view(int n) throws SQLException {
-		System.out.println("QAboardDAO.view()호출됨");
+		//System.out.println("QAboardDAO.view()호출됨");
 		// 게시판의 데이터를 담는 객체 생성
 		QAboardDTO qaBoardDTO = new QAboardDTO();
 		//RDBMS에서 데이터를 가져오는 프로그램 작성
@@ -105,7 +105,7 @@ public class QAboardDAO {
 		
 		try {		
 			// 1. 
-			System.out.println("QAboard 드라이버 및 연결 확인");
+			//System.out.println("QAboard 드라이버 및 연결 확인");
 			// 2.게시글을 보는 sql문
 			String sql = "select no, title, content, writer, writedate, grp, seq, lvl from qaboard where no = " + n; 
 			// 3. 처리객제
@@ -149,7 +149,7 @@ public class QAboardDAO {
 	 * write()
 	 */
 	public void write(QAboardDTO dto) throws SQLException {
-		System.out.println("QAboardDAO.write()호출됨");
+		//System.out.println("QAboardDAO.write()호출됨");
 		
 		//RDBMS에서 데이터를 가져오는 프로그램 작성
 		// 필요객체 선언
@@ -197,7 +197,7 @@ public class QAboardDAO {
 	 * 질문글 수정 method					
 	 */
 	public void edit(QAboardDTO dto) throws SQLException{
-		System.out.println("QAboardDAO.questionEdit()호출됨");
+		//System.out.println("QAboardDAO.questionEdit()호출됨");
 		
 		// DBMS 연결
 		Connection driver = DBUtil.getConnection();	
@@ -233,7 +233,7 @@ public class QAboardDAO {
 	 * 답변 글쓰기용 method
 	 */
 	public void answerWrite(QAboardDTO dto) throws SQLException{	
-		System.out.println("QAboardDAO.answerWrite()호출됨");
+		//System.out.println("QAboardDAO.answerWrite()호출됨");
 		
 		// DBMS 연결
 		Connection driver = DBUtil.getConnection();	
@@ -274,8 +274,8 @@ public class QAboardDAO {
 	/*
 	 * 질문글 삭제 method
 	 */
-	public void QuestionDelete(int n) throws SQLException{	
-		System.out.println("QAboardDAO.answerDelete()");
+	public void questionDelete(int n) throws SQLException{	
+		//System.out.println("QAboardDAO.answerDelete()");
 		
 		// DBMS 연결
 		Connection driver = DBUtil.getConnection();	
@@ -306,7 +306,7 @@ public class QAboardDAO {
 	 * 답변글 삭제 method
 	 */
 	public void answerDelete(int n) throws SQLException{	
-		System.out.println("QAboardDAO.answerDelete()");
+		//System.out.println("QAboardDAO.answerDelete()");
 		
 		// DBMS 연결
 		Connection driver = DBUtil.getConnection();	
@@ -345,7 +345,7 @@ public class QAboardDAO {
 		ResultSet rs = null;			// 쿼리문의 반환값을 담는 객체
 		
 		try {
-			System.out.println("QAboard 드라이버 및 연결 확인");
+		//	System.out.println("QAboard 드라이버 및 연결 확인");
 			String sql = "select no, title, writer, writedate, grp, seq, lvl "
 					+ "from qaboard where grp = " + n + " order by grp, seq asc"; 
 			

@@ -7,7 +7,7 @@ import com.eagle.qaboard.dto.QAboardDTO;
 public class QAboardViewService {
 
 	public QAboardDTO process(int n) throws SQLException {
-		System.out.println("QAboardViewService.process()호출됨");
+		//System.out.println("QAboardViewService.process()호출됨");
 		QAboardDTO qaBoardDTO = new QAboardDTO();
 		QAboardDAO qaBoardDAO = new QAboardDAO();
 		
